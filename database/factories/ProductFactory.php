@@ -4,6 +4,7 @@
 
 use App\Product;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
@@ -17,5 +18,6 @@ $factory->define(Product::class, function (Faker $faker) {
         'msrp' => $faker->msrp,
 
         'coustomer_id' => factory(App\Productline::class),
+        'remember_token' => Str::random(10),
     ];
 });
